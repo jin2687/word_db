@@ -12,8 +12,8 @@ from pydantic import BaseModel
 # ---------------------------------------------------------------------------
 
 OLLAMA_BASE_URL = "http://localhost:11434"
-OLLAMA_VISION_MODEL = "qwen3:8b"
-OLLAMA_TEXT_MODEL = "qwen3:8b"
+OLLAMA_VISION_MODEL = "qwen3.5:9b"
+OLLAMA_TEXT_MODEL = "qwen3.5:9b"
 
 ANKI_CONNECT_URL = "http://localhost:8765"
 ANKI_DECK_NAME = "English Vocabulary"

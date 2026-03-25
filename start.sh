@@ -68,10 +68,10 @@ for m in data.get('models', []):
     print(m['name'])
 " 2>/dev/null || true)
 
-    if echo "$MODELS" | grep -qi "qwen3"; then
-      ok "Model (qwen3) is available"
+    if echo "$MODELS" | grep -qi "qwen3.5"; then
+      ok "Model (qwen3.5) is available"
     else
-      warn "Model (qwen3) not found. Run: ollama pull qwen3:8b"
+      warn "Model (qwen3.5) not found. Run: ollama pull qwen3.5:8b"
       ((ERRORS++))
     fi
   else
