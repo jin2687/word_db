@@ -1,0 +1,97 @@
+.capture {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hidden-input {
+  display: none;
+}
+
+.btn-primary {
+  background: #1976d2;
+  color: #fff;
+  width: 100%;
+  padding: 16px;
+  font-size: 1.1rem;
+}
+
+.status {
+  text-align: center;
+  color: #888;
+  padding: 12px 0;
+}
+
+/* Word cloud */
+.word-cloud {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.label {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.word {
+  display: inline-block;
+  background: #e3f2fd;
+  color: #1565c0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.word.selected {
+  background: #1976d2;
+  color: #fff;
+}
+
+/* Result card */
+.result-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.result-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.translation {
+  font-size: 1.2rem;
+  color: #e65100;
+  margin-bottom: 8px;
+}
+
+.example {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.btn-register {
+  background: #43a047;
+  color: #fff;
+  width: 100%;
+}
+
+.success {
+  color: #2e7d32;
+  font-weight: 600;
+  padding: 8px 0;
+}

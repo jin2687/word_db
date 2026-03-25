@@ -1,0 +1,83 @@
+.review,
+.review-done {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-top: 12px;
+}
+
+.review-done h2 {
+  font-size: 1.5rem;
+}
+
+.progress {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* Card */
+.flashcard {
+  width: 100%;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-face {
+  padding: 28px 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.card-face.back {
+  border-top: 1px dashed #ddd;
+  background: #fffde7;
+  font-size: 1.4rem;
+  color: #e65100;
+}
+
+/* Buttons */
+.btn-show {
+  width: 100%;
+  background: #1976d2;
+  color: #fff;
+  padding: 16px;
+  font-size: 1.1rem;
+}
+
+.answer-buttons {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.btn-again {
+  flex: 1;
+  background: #e53935;
+  color: #fff;
+  padding: 16px;
+  font-size: 1.05rem;
+}
+
+.btn-good {
+  flex: 1;
+  background: #43a047;
+  color: #fff;
+  padding: 16px;
+  font-size: 1.05rem;
+}
+
+.btn-reload {
+  background: #1976d2;
+  color: #fff;
+  padding: 14px 32px;
+}
+
+.status {
+  text-align: center;
+  color: #888;
+  padding: 40px 0;
+}
