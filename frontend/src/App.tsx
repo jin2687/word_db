@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CaptureRegister from "./components/CaptureRegister";
 import Review from "./components/Review";
+import StatusBar from "./components/StatusBar";
 import "./App.css";
 
 type Tab = "capture" | "review";
@@ -10,6 +11,7 @@ export default function App() {
 
   return (
     <div className="app">
+      <StatusBar />
       <nav className="tab-bar">
         <button
           className={tab === "capture" ? "tab active" : "tab"}

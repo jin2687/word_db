@@ -81,3 +81,35 @@
   color: #888;
   padding: 40px 0;
 }
+
+/* ---- Desktop ---- */
+
+@media (min-width: 768px) {
+  .flashcard {
+    max-width: 520px;
+  }
+
+  .card-face {
+    padding: 40px 32px;
+    font-size: 1.4rem;
+  }
+
+  .card-face.back {
+    font-size: 1.6rem;
+  }
+
+  .btn-show {
+    width: auto;
+    min-width: 300px;
+  }
+
+  .answer-buttons {
+    max-width: 400px;
+  }
+
+  .btn-again,
+  .btn-good {
+    padding: 18px;
+    font-size: 1.1rem;
+  }
+}

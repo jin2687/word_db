@@ -21,6 +21,22 @@ async def client():
 
 
 # ---------------------------------------------------------------------------
+# GET /health
+# ---------------------------------------------------------------------------
+
+
+@pytest.mark.anyio
+async def test_health_check_all_down(client: AsyncClient):
+    """When Ollama and Anki are unreachable, health reports them as down."""
+    resp = await client.get("/health")
+    assert resp.status_code == 200
+    data = resp.json()
+    assert data["api"] is True
+    assert data["ollama"] is False
+    assert data["anki"] is False
+
+
+# ---------------------------------------------------------------------------
 # POST /upload-image
 # ---------------------------------------------------------------------------
 

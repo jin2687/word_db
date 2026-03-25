@@ -1,0 +1,44 @@
+.status-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #fff;
+  background: #388e3c;
+  transition: background 0.3s;
+}
+
+.status-bar.warn {
+  background: #d84315;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 6px;
+}
+
+.dot.green {
+  background: #a5d6a7;
+}
+
+.dot.red {
+  background: #ef9a9a;
+}
+
+.refresh-btn {
+  margin-left: auto;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 3px 10px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+}
+
+.refresh-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+}

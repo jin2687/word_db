@@ -1,7 +1,6 @@
 """Translation Flashcard PWA - Backend API"""
 
 import base64
-from typing import Optional
 
 import httpx
 from fastapi import FastAPI, File, UploadFile
@@ -135,6 +134,37 @@ class CardInfo(BaseModel):
 # ---------------------------------------------------------------------------
 # Endpoints
 # ---------------------------------------------------------------------------
+
+@app.get("/health")
+async def health_check():
+    """Check connectivity to Ollama and AnkiConnect."""
+    status: dict = {"api": True, "ollama": False, "anki": False, "ollama_models": []}
+
+    # Check Ollama
+    try:
+        async with httpx.AsyncClient(timeout=5.0) as client:
+            resp = await client.get(f"{OLLAMA_BASE_URL}/api/tags")
+            if resp.status_code == 200:
+                status["ollama"] = True
+                models = resp.json().get("models", [])
+                status["ollama_models"] = [m["name"] for m in models]
+    except Exception:
+        pass
+
+    # Check AnkiConnect
+    try:
+        async with httpx.AsyncClient(timeout=5.0) as client:
+            resp = await client.post(
+                ANKI_CONNECT_URL,
+                json={"action": "version", "version": 6},
+            )
+            if resp.status_code == 200 and resp.json().get("result"):
+                status["anki"] = True
+    except Exception:
+        pass
+
+    return status
+
 
 @app.post("/upload-image")
 async def upload_image(file: UploadFile = File(...)):

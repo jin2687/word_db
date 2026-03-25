@@ -21,7 +21,24 @@ export interface CardInfo {
   back: string;
 }
 
+export interface HealthStatus {
+  api: boolean;
+  ollama: boolean;
+  anki: boolean;
+  ollama_models: string[];
+}
+
 // ---- API calls ------------------------------------------------------------
+
+export async function checkHealth(): Promise<HealthStatus> {
+  try {
+    const res = await fetch(`${API_BASE}/health`);
+    if (!res.ok) throw new Error("Health check failed");
+    return res.json();
+  } catch {
+    return { api: false, ollama: false, anki: false, ollama_models: [] };
+  }
+}
 
 export async function uploadImage(file: File): Promise<string> {
   const form = new FormData();
