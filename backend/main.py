@@ -12,8 +12,8 @@ from pydantic import BaseModel
 # ---------------------------------------------------------------------------
 
 OLLAMA_BASE_URL = "http://localhost:11434"
-OLLAMA_VISION_MODEL = "qwen3.5:9b"
-OLLAMA_TEXT_MODEL = "qwen3.5:9b"
+OLLAMA_VISION_MODEL = "glm-ocr"        # OCR specialist (0.9B, fast & accurate)
+OLLAMA_TEXT_MODEL = "qwen3.5:9b"       # Translation (thinking disabled)
 
 ANKI_CONNECT_URL = "http://localhost:8765"
 ANKI_DECK_NAME = "English Vocabulary"
@@ -68,7 +68,6 @@ async def call_ollama_vision(image_bytes: bytes, prompt: str) -> str:
         "images": [b64_image],
         "stream": False,
         "options": {"num_predict": 2048},
-        "think": False,
     }
     async with httpx.AsyncClient(timeout=120.0) as client:
         resp = await client.post(f"{OLLAMA_BASE_URL}/api/generate", json=payload)

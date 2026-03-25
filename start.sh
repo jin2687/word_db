@@ -68,10 +68,17 @@ for m in data.get('models', []):
     print(m['name'])
 " 2>/dev/null || true)
 
-    if echo "$MODELS" | grep -qi "qwen3.5"; then
-      ok "Model (qwen3.5) is available"
+    if echo "$MODELS" | grep -qi "glm-ocr"; then
+      ok "OCR model (glm-ocr) is available"
     else
-      warn "Model (qwen3.5) not found. Run: ollama pull qwen3.5:8b"
+      warn "OCR model (glm-ocr) not found. Run: ollama pull glm-ocr"
+      ((ERRORS++))
+    fi
+
+    if echo "$MODELS" | grep -qi "qwen3.5"; then
+      ok "Text model (qwen3.5:9b) is available"
+    else
+      warn "Text model (qwen3.5:9b) not found. Run: ollama pull qwen3.5:9b"
       ((ERRORS++))
     fi
   else
